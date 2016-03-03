@@ -17,12 +17,12 @@
 // Test cases
 
 // 1: A single tile
-let input : String? = "1"
+//let input : String? = "1"
 
 // 2: Two tiles
 //let input : String? = "2"
 
-// 3: Four tiles
+// 3: A perfect square
 //let input : String? = "4"
 
 // 4: Negative number of tiles
@@ -36,6 +36,9 @@ let input : String? = "1"
 
 // 7: Way too many tiles
 //let input : String? = "100000"
+
+// 8: Another perfect square
+let input : String? = "64"
 
 
 // Only continue when input has been provided
@@ -52,7 +55,7 @@ if let givenInput = input {
             var length : Int = 0
             repeat {
                 length += 1
-            } while (length + 1) * (length + 1) < tiles
+            } while (length + 1) * (length + 1) <= tiles
             
             // Print the length
             print("The largest square has side length \(length).")
