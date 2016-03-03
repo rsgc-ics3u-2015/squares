@@ -16,17 +16,51 @@
 
 // Test cases
 
-//// 1: A single tile
-let t : Int = 9999
+// 1: A single tile
+let input : String? = "1"
 
-// Inputs
-let tiles : Int = t
+// 2: Two tiles
+//let input : String? = "2"
 
-// Iterate until the next largest length, squared, is greater than the number of tiles
-var length : Int = 0
-repeat {
-    length += 1
-} while (length + 1) * (length + 1) < tiles
+// 3: Four tiles
+//let input : String? = "4"
 
-// Print the length
-print("The largest square has side length \(length).")
+// 4: Negative number of tiles
+//let input : String? = "-1"
+
+// 5: Prime number of tiles
+//let input : String? = "59"
+
+// 6: Too many tiles
+//let input : String? = "10000"
+
+// 7: Way too many tiles
+//let input : String? = "100000"
+
+
+// Only continue when input has been provided
+if let givenInput = input {
+    
+    // Convert input to an integer if possible
+    if let tiles = Int(givenInput) {
+        
+        // Only use integers in a given range
+        if tiles > 0 && tiles < 10000 {
+
+            // Iterate until the next largest length, squared, is greater
+            // than the number of tiles
+            var length : Int = 0
+            repeat {
+                length += 1
+            } while (length + 1) * (length + 1) < tiles
+            
+            // Print the length
+            print("The largest square has side length \(length).")
+            
+        }
+        
+    }
+
+}
+    
+
